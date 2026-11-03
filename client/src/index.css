@@ -1,11 +1,11 @@
 :root {
-  --primary: #4f46e5;
-  --primary-dark: #4338ca;
-  --bg: #f7f7fb;
+  --primary: #db2777;
+  --primary-dark: #be185d;
+  --bg: #fff5f8;
   --card: #ffffff;
   --text: #1f2937;
   --muted: #6b7280;
-  --border: #e5e7eb;
+  --border: #f3d5e0;
   --danger: #dc2626;
   --success: #15803d;
 }
@@ -110,7 +110,7 @@ ul {
 }
 
 .btn-outline:hover {
-  background: #eef2ff;
+  background: #fce7f3;
   color: var(--primary-dark);
 }
 
@@ -447,7 +447,7 @@ ul {
 
 .form-card input:focus,
 .filters input:focus {
-  outline: 2px solid #c7d2fe;
+  outline: 2px solid #fbcfe8;
   border-color: var(--primary);
 }
 
@@ -481,7 +481,7 @@ ul {
 }
 
 .status {
-  background: #eef2ff;
+  background: #fce7f3;
   color: var(--primary);
   padding: 4px 12px;
   border-radius: 999px;
