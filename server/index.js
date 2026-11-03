@@ -1,6 +1,11 @@
 import "dotenv/config";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
+import bcrypt from "bcryptjs";
+import { readData, writeData } from "./db.js";
 import productRoutes from "./routes/products.js";
 import authRoutes from "./routes/auth.js";
 import orderRoutes from "./routes/orders.js";
@@ -10,6 +15,22 @@ if (!process.env.JWT_SECRET) {
   console.error("Missing JWT_SECRET. Create server/.env (see .env.example).");
   process.exit(1);
 }
+
+// On a free host the users file is wiped whenever the server restarts or sleeps.
+// So we make sure a demo login always exists for anyone who wants to test the site.
+async function ensureDemoUser() {
+  const users = readData("users");
+  if (!users.find((u) => u.email === "demo@shopeasy.com")) {
+    users.push({
+      id: "demo-user",
+      name: "Demo User",
+      email: "demo@shopeasy.com",
+      password: await bcrypt.hash("demo1234", 10),
+    });
+    writeData("users", users);
+  }
+}
+await ensureDemoUser();
 
 const app = express();
 
@@ -28,6 +49,20 @@ app.use("/api/orders", orderRoutes);
 app.use("/api", (req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
+
+// ---- Serve the built React website (when client/dist exists) ----
+// Run `npm run build` inside client/ to create it. Then this one server
+// serves both the API (/api/...) and the website, so deploying is a single step.
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const clientBuild = path.join(__dirname, "..", "client", "dist");
+
+if (fs.existsSync(clientBuild)) {
+  app.use(express.static(clientBuild));
+  // Any other URL (like /cart or /orders) gets index.html, and React Router shows the right page.
+  app.get("/{*splat}", (req, res) => {
+    res.sendFile(path.join(clientBuild, "index.html"));
+  });
+}
 
 // Catches errors from any route
 app.use((err, req, res, next) => {
