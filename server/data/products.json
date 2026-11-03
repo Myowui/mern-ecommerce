@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "Wireless Headphones", "price": 2500, "category": "Electronics", "image": "https://picsum.photos/seed/headphones/600/450", "description": "Over-ear Bluetooth headphones with deep bass and 30 hours of battery life." },
+  { "id": 2, "name": "Smart Watch", "price": 5785, "category": "Electronics", "image": "https://picsum.photos/seed/smartwatch/600/450", "description": "Track steps, heart rate and sleep. Water resistant with a bright AMOLED screen." },
+  { "id": 3, "name": "Portable Speaker", "price": 8776, "category": "Electronics", "image": "https://picsum.photos/seed/speaker/600/450", "description": "Pocket-sized speaker with loud, clear sound and 12 hours of playback." },
+  { "id": 4, "name": "Power Bank 20000mAh", "price": 997, "category": "Electronics", "image": "https://picsum.photos/seed/powerbank/600/450", "description": "Fast-charging power bank that can charge a phone about five times." },
+  { "id": 5, "name": "Cotton T-Shirt", "price": 654, "category": "Fashion", "image": "https://picsum.photos/seed/tshirt/600/450", "description": "Soft, breathable 100% cotton t-shirt with a relaxed everyday fit." },
+  { "id": 6, "name": "Denim Jacket", "price": 8766, "category": "Fashion", "image": "https://picsum.photos/seed/jacket/600/450", "description": "Classic blue denim jacket, durable and easy to style with anything." },
+  { "id": 7, "name": "Running Shoes", "price": 3232, "category": "Fashion", "image": "https://picsum.photos/seed/shoes/600/450", "description": "Lightweight running shoes with cushioned soles and breathable mesh." },
+  { "id": 8, "name": "Canvas Backpack", "price": 1000, "category": "Fashion", "image": "https://picsum.photos/seed/backpack/600/450", "description": "Roomy backpack with a padded laptop sleeve and water-resistant fabric." },
+  { "id": 9, "name": "Ceramic Coffee Mug Set", "price": 756, "category": "Home", "image": "https://picsum.photos/seed/mugs/600/450", "description": "Set of four handmade-style ceramic mugs, microwave and dishwasher safe." },
+  { "id": 10, "name": "LED Desk Lamp", "price": 1222, "category": "Home", "image": "https://picsum.photos/seed/lamp/600/450", "description": "Adjustable desk lamp with three brightness levels and a USB charging port." },
+  { "id": 11, "name": "Atomic Habits", "price": 350, "category": "Books", "image": "https://picsum.photos/seed/habits/600/450", "description": "A practical guide to building good habits and breaking bad ones, by James Clear." },
+  { "id": 12, "name": "The Psychology of Money", "price": 449, "category": "Books", "image": "https://picsum.photos/seed/money/600/450", "description": "Short stories about how people think about money, by Morgan Housel." }
+]
